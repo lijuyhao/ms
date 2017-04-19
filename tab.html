@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery.min.js">
+		
+	</script>
+	<style type="text/css">
+		body {
+			margin: 50px;
+			background-color: orange;
+		}
+		
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		.tab-header {
+			width: 300px;
+			height: 30px;
+			line-height: 30px;
+			background-color: #b9ef90;
+		}
+		
+		.tab-header li {
+			width: 60px;
+			height: 100%;
+			float: left;
+			border-right: 1px solid #000;
+			text-align: center;
+			box-sizing: border-box;
+			cursor: pointer;
+		}
+		
+		.tab-header li.active {
+			background-color: #6cf;
+		}
+		
+		.tab-body {
+			width: 300px;
+			height: 150px;
+			padding: 10px;
+			background-color: #6cf;
+			box-sizing: border-box;
+		}
+	</style>
+
+	<body>
+		<ul class="tab-header">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<ul class="tab-body">
+			<li>第一页</li>
+			<li>第二页</li>
+			<li>第三页</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		class Tab {
+			constructor(opts) {
+				this.index = opts.index || 0;
+				this.$tabHeader = opts.header;
+				this.$tabBody = opts.body;
+				this.render();
+				this.bind();
+			}
+			render() {
+				this.$tabHeader.find("li").eq(this.index).addClass("active").siblings().removeClass("active");
+				this.$tabBody.find("li").eq(this.index).show().siblings().hide();
+			}
+			bind() {
+				this.$tabHeader.on("click", "li", e => {
+					this.index = $(e.target).index();
+					this.render();
+				});
+			}
+		}
+
+		let tab = new Tab({
+			header: $(".tab-header"),
+			body: $(".tab-body")
+		})
+	</script>
+
+</html>

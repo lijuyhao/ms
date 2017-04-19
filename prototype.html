@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+		function Person() {
+			this.name = 'Jhon';
+		}
+		Person.prototype = {
+			say: function() {
+				console.log('Hello ' + this.name);
+			}
+		};
+		var person = new Person();
+		person.say();//构造实例对象操作，在添加原型方法之后。
+	</script>
+
+</html>

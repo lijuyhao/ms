@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var a=[1,2,3,4,5,6];
+		var newArr=a.sort(function(){
+		    return	Math.random()-0.5
+		})
+		console.log(newArr);
+		
+		
+		var b=[1,2,3,4,5,6];
+		var newArr2=b.sort(function(a,b){
+            return a-b;
+		})
+		console.log(newArr2);
+		
+		var c=[1,2,3,4,5,6];
+		var newArr3=c.sort(function(a,b){
+            return b-a;
+		})
+		console.log(newArr3);
+		
+		var d=[1,2,3,4,5,6];
+		var newArr4=d.reverse()
+		console.log(newArr3);
+
+		
+		
+	</script>
+</html>

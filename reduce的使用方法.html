@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="form">
+						<form method="post" action="#">
+							<input type="text" class="textbox" value=" Name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}">
+							<input type="text" class="textbox" value="Email" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Email';}">
+							<div class="clear"> </div>
+							<div>
+								<textarea value="Message:" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = ' Message';}">Message</textarea>
+							</div>
+							<div class="button send_button">
+								<input type="submit" value="Send">
+							</div>
+							<div class="clear"> </div>
+						</form>
+					</div>
+	</body>
+	<script type="text/javascript">
+		var arr='1223334444';
+		var info=arr.split('').reduce((a,b)=>(a[b]++||(a[b]=1),a),{});
+		console.log(info);
+	</script>
+</html>
